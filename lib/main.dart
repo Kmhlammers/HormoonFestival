@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'screens/festival_screen.dart';
+import 'layout_screen.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'screens/areas/hormonen_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'routes/app_router.dart';
+import 'styles/text_style.dart';
 
 void main() {
   runApp(const MainApp());
@@ -39,16 +40,20 @@ class MainApp extends StatelessWidget {
           ),
           bodyLarge: const TextStyle(color: Color(0xFF5F0037)),
           bodyMedium: const TextStyle(color: Color(0xFF5F0037)),
-          titleLarge: const TextStyle(color: Color(0xFF5F0037), fontSize: 30),
+          titleLarge: const TextStyle(color: Color(0xFF5F0037), 
+            fontSize: 30, 
+            letterSpacing: 2.0,
+            fontFamily: 'OpenSans', // Zelfde familie
+            fontWeight: FontWeight.w600,),
           titleMedium: const TextStyle(color: Color(0xFF5F0037), letterSpacing: -0.5,),
           titleSmall: const TextStyle(color: Color(0xFF5F0037)),
+          
         ),
         appBarTheme: AppBarTheme(
           titleTextStyle: TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.bold,
+            wordSpacing: 100,
             color: Color(0xFF5F0037),
-            letterSpacing: 0.5,
           ),
           centerTitle: true,
           elevation: 16,
@@ -64,7 +69,7 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
+/*
 class HomeScreen extends StatefulWidget {
   final Widget child;
 
@@ -177,24 +182,25 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
     return RichText(
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.justify,
       maxLines: 2,
       text: TextSpan(
         style: Theme.of(context).textTheme.titleLarge,
-        children: const [
+        children: [
           TextSpan(
             text: 'H! Elke, ',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+            style: AppStyle.boldTitleStyle,// Gewicht voor OpenSans-Bold
+            ),
           TextSpan(
             text: 'leuk je\nhier weer te zien!',
+            
           ),
         ],
       ),
     );
   }
 }
-
+*/
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
 
@@ -270,7 +276,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             
             SizedBox(height: 8),
-
+            
             SizedBox(
               height: 200,
               child: Swiper(
@@ -302,7 +308,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                     ),
                   ),
-
+                
                     ])
                     
                       

@@ -166,7 +166,7 @@ class _HormonenQuizScreenState extends State<HormonenQuizScreen> {
           style: ElevatedButton.styleFrom(
             backgroundColor: theme.colorScheme.primary,
             foregroundColor: theme.colorScheme.primary,
-            padding: EdgeInsets.all(30),
+            padding: EdgeInsets.symmetric(vertical: 3, horizontal: 10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
               side: BorderSide(
@@ -181,7 +181,7 @@ class _HormonenQuizScreenState extends State<HormonenQuizScreen> {
                     style: theme.textTheme.titleMedium?.copyWith(
                       color: theme.colorScheme.onPrimary,
                       fontWeight: FontWeight.bold,
-                      fontSize: 60,
+                      fontSize: 70,
                     ),
                   ),
                 ),

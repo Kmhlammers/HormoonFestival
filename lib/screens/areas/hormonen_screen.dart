@@ -23,37 +23,33 @@ class HormonenScreen extends StatelessWidget {
         ),
         
         // Content overlay
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Kaart button
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: ElevatedButton(
-                  onPressed: () => context.go('/festival'),
-                  child: Text('KAART'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+        Positioned(
+          top: 2,
+          left: 4,
+          child: 
+            // Kaart button
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: ElevatedButton(
+                onPressed: () => context.go('/festival'),
+                child: Text('KAART'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
-              
-              Spacer(),
-              
-              // List of items
-              Container(
-                width: 200,
-                margin: const EdgeInsets.only(left: 172),
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                decoration: BoxDecoration(                  
-                  borderRadius: BorderRadius.circular(8),
-                ),
+            ),                         
+          ),
+
+        // List of items
+            Positioned(
+              bottom: 10,
+              right: 0,
+              child: Container(
+                width: 170,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisSize: MainAxisSize.min,
@@ -65,9 +61,7 @@ class HormonenScreen extends StatelessWidget {
                   )).toList(),
                 ),
               ),
-            ],
-          ),
-        ),
+            ),
       ],
     );
   }
